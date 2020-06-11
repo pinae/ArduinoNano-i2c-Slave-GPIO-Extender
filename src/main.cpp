@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-#define I2C_ADDR 32
+#define I2C_ADDR 64
 
 char ioConfigA = 0;
 char ioConfigB = 0;
@@ -104,8 +104,6 @@ void decodeMessage() {
     case '\x21': readState = op; break;
     case '\x22': readState = op; break;
     case '\x23': readState = op; break;
-    case '\x24': readState = op; break;
-    case '\x25': readState = op; break;
     case '\x26': readState = op; break;
     case '\x27': readState = op; break;
     default: printOpError(op); break;
@@ -143,8 +141,6 @@ void requestEvent() {
     case '\x21': writeInt(analogRead(24)); break;
     case '\x22': writeInt(analogRead(25)); break;
     case '\x23': writeInt(analogRead(26)); break;
-    case '\x24': writeInt(analogRead(27)); break;
-    case '\x25': writeInt(analogRead(28)); break;
     case '\x26': writeInt(analogRead(29)); break;
     case '\x27': writeInt(analogRead(30)); break;
     default: Serial.println("Error: Unknown readState."); break;
