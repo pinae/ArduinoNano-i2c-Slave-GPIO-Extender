@@ -13,7 +13,7 @@ void printBinary(char data) {
   }
 }
 
-void configurePins(unsigned short bank, char configuration) {
+void configurePins(unsigned short bank, unsigned char configuration) {
   switch (bank) {
     case 0: ioConfigA = configuration; break;
     case 1: ioConfigB = configuration & '\x0f'; break;
