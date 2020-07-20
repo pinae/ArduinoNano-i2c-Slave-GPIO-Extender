@@ -1,4 +1,9 @@
+#if ARDUINO < 100
+#include <WProgram.h>
+#else
 #include <Arduino.h>
+#endif
+
 #include <Wire.h>
 
 #define I2C_ADDR 64
